@@ -1,2 +1,14 @@
 <button matButton="outlined" routerLink="/">Home</button>
 <h1>Offer Translation</h1>
+<ng-select
+  [items]="languages"
+  [(ngModel)]="knownLanguages"
+  bindLabel="label"
+  bindValue="code"
+  [multiple]="true"
+  placeholder="I know..."
+>
+  <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+    <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+  </ng-template>
+</ng-select>
