@@ -1,2 +1,27 @@
 <button matButton="outlined" routerLink="/">Home</button>
 <h1>Find Translator</h1>
+<ng-select
+  [items]="languages"
+  [(ngModel)]="knownLanguages"
+  bindLabel="label"
+  bindValue="code"
+  [multiple]="true"
+  placeholder="I know..."
+>
+  <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+    <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+  </ng-template>
+</ng-select>
+
+<ng-select
+  [items]="languages"
+  [(ngModel)]="requiredLanguages"
+  bindLabel="label"
+  bindValue="code"
+  [multiple]="true"
+  placeholder="I require help with..."
+>
+  <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+    <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+  </ng-template>
+</ng-select>
