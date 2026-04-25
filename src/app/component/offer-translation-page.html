@@ -35,3 +35,7 @@
   <p>Audio is being transmitted between your devices...</p>
   <a matButton="outlined" href="/">End call</a>
 }
+
+@if (rtcEstablished() == MatchingStatus.END) {
+  <h4>The other party has ended the call.</h4>
+}
