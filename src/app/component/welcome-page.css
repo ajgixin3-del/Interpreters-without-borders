@@ -1,0 +1,27 @@
+h1, h2 {
+  text-align: center;
+  color: #f97171;
+  font-size: xxx-large;
+}
+
+h2 {
+  font-size: xx-large;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+button {
+  background-color: #b2eee6;
+  font-size: x-large;
+}
+
+@media (max-width: 768px) {
+  .button {
+    flex-direction: column;
+    align-items: center;
+  }
+}
