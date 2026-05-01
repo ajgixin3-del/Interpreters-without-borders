@@ -1,27 +1,29 @@
-<button matButton="outlined" routerLink="/">Home</button>
-<h1>Offer Translation</h1>
-<audio autoplay #audioFromRemote></audio>
+<div class="offer-translation-container">
+  <button matButton="outlined" routerLink="/">Home</button>
+  <h1>Offer Translation</h1>
+  <audio autoplay #audioFromRemote></audio>
 
-@if (rtcEstablished() == MatchingStatus.NOT_STARTED) {
-  <p>
-    I am free during the next 15 minutes and I know 2 or more of the following languages:
-  </p>
-  <ng-select
-    [items]="languages"
-    [(ngModel)]="knownLanguages"
-    bindLabel="label"
-    bindValue="code"
-    [multiple]="true"
-    placeholder="I know..."
-  >
-    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-      <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
-    </ng-template>
-  </ng-select>
-  <button matButton="filled" (click)="triggerOfferTranslation()" [disabled]="knownLanguages.length < 2">Offer
-    translation
-  </button>
-}
+  @if (rtcEstablished() == MatchingStatus.NOT_STARTED) {
+    <p>
+      I am free during the next 15 minutes and I know 2 or more of the following languages:
+    </p>
+    <ng-select
+      [items]="languages"
+      [(ngModel)]="knownLanguages"
+      bindLabel="label"
+      bindValue="code"
+      [multiple]="true"
+      placeholder="I know..."
+    >
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+      </ng-template>
+    </ng-select>
+    <button matButton="outlined" (click)="triggerOfferTranslation()" [disabled]="knownLanguages.length < 2">Offer
+      translation
+    </button>
+  }
+</div>
 
 @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
   <p>

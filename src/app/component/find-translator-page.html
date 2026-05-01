@@ -28,7 +28,7 @@
       <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
     </ng-template>
   </ng-select>
-  <button matButton="filled" (click)="triggerFindTranslator()" [disabled]="!areLanguagesValid()">Find translator
+  <button matButton="outlined" (click)="triggerFindTranslator()" [disabled]="!areLanguagesValid()">Find translator
   </button>
 }
 
