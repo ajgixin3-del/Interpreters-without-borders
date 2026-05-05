@@ -1,4 +1,5 @@
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #f97171;
   font-size: xxx-large;
@@ -21,7 +22,6 @@ button {
 }
 
 @media (max-width: 768px) {
-
   h2 {
     line-height: 150%;
   }

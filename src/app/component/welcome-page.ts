@@ -8,7 +8,7 @@ import { DemoDialog } from './demo-dialog';
   selector: 'app-welcome-page',
   imports: [RouterLink, MatButton],
   templateUrl: './welcome-page.html',
-  styleUrl: './welcome-page.css',
+  styleUrl: './welcome-page.scss',
 })
 export class WelcomePage {
   private readonly dialog: MatDialog = inject(MatDialog);
