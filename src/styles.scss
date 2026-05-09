@@ -2,9 +2,6 @@
 
 :root {
   @include mat.fab-overrides(
-    (
-      container-shape: 10px
-    )
   );
 }
 

@@ -26,18 +26,27 @@
 </div>
 
 @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
-  <p>
-    Please remain ready as you may be matched to someone who needs your help with
-    <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>.
-  </p>
+  <div lass="progress-container">
+    <img src="/Group 10.svg" alt="Interpreters Without Borders" class="icon" />
+    <p>
+      Please remain ready as you may be matched to someone who needs your help with
+      <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>.
+    </p>
+  </div>
 }
 
 @if (rtcEstablished() == MatchingStatus.SUCCESS) {
-  <h4>You have been successfully connected to help another person.</h4>
+  <div class="success-container">
+    <img src="/Group 16.svg" alt="Interpreters Without Borders" class="icon" />
+    <h4>You have been successfully connected to help another person.</h4>
+  </div>
   <p>Audio is being transmitted between your devices...</p>
   <a matButton="outlined" href="/">End call</a>
 }
 
 @if (rtcEstablished() == MatchingStatus.END) {
-  <h4>The other party has ended the call.</h4>
+  <div class="end-container">
+    <img src="/Group 16-2.svg" alt="Interpreters Without Borders" class="icon" />
+    <h4>The other party has ended the call.</h4>
+  </div>
 }

@@ -10,10 +10,11 @@ h2 {
   letter-spacing: 5%;
 }
 
-.button {
+.group-button-container {
   display: flex;
   justify-content: center;
   gap: 120px;
+
 }
 
 button {
@@ -26,8 +27,22 @@ button {
     line-height: 150%;
   }
 
-  .button {
+  .group-button-container {
     flex-direction: column;
     align-items: center;
+    gap: 50px;
   }
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1px
+}
+
+.icon {
+  width: 240px;
+  height: 240px;
+  display: inline-block;
 }

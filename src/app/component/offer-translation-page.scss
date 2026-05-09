@@ -19,3 +19,10 @@ p {
 button {
   font-size: 1.5em;
 }
+
+.progress-container, .success-container, .end-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1px
+}
