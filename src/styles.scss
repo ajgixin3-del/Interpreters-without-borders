@@ -1,0 +1,18 @@
+body {
+  background: #E4F4F7;
+  background: linear-gradient(180deg, rgba(246, 248, 250, 0.4) 0%, rgba(228, 244, 247, 1) 100%);
+  /*
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 20vh;
+  */
+}
+
+:root {
+  --mat-button-outlined-label-text-color: #f99192;
+}
+
+/* You can add global styles to this file, and also import other style files */

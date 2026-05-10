@@ -1,52 +1,65 @@
-<button matButton="outlined" routerLink="/">Home</button>
-<h1>Find Translator</h1>
-<audio autoplay #audioFromRemote></audio>
+<div class="find-translator-container">
 
-@if (rtcEstablished() == MatchingStatus.NOT_STARTED) {
-  <ng-select
-    [items]="languages"
-    [(ngModel)]="knownLanguages"
-    bindLabel="label"
-    bindValue="code"
-    [multiple]="true"
-    placeholder="I know..."
-  >
-    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-      <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
-    </ng-template>
-  </ng-select>
+  <button matButton="outlined" routerLink="/">Home</button>
+  <h1>Find Translator</h1>
+  <audio autoplay #audioFromRemote></audio>
 
-  <ng-select
-    [items]="languages"
-    [(ngModel)]="requiredLanguages"
-    bindLabel="label"
-    bindValue="code"
-    [multiple]="true"
-    placeholder="I require help with..."
-  >
-    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-      <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
-    </ng-template>
-  </ng-select>
-  <button matButton="filled" (click)="triggerFindTranslator()" [disabled]="!areLanguagesValid()">Find translator
-  </button>
-}
+  @if (rtcEstablished() == MatchingStatus.NOT_STARTED) {
+    <ng-select
+      [items]="languages"
+      [(ngModel)]="knownLanguages"
+      bindLabel="label"
+      bindValue="code"
+      [multiple]="true"
+      placeholder="I know..."
+    >
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+      </ng-template>
+    </ng-select>
+
+    <ng-select
+      [items]="languages"
+      [(ngModel)]="requiredLanguages"
+      bindLabel="label"
+      bindValue="code"
+      [multiple]="true"
+      placeholder="I require help with..."
+    >
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item.label }}
+      </ng-template>
+    </ng-select>
+    <button matButton="outlined" (click)="triggerFindTranslator()" [disabled]="!areLanguagesValid()">Find translator
+    </button>
+  }
+
+</div>
 
 @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
-  <p>
-    Please wait while we try to match you with a translator who can translate between
-    <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>
-    and
-    <strong>{{ requiredLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>
-  </p>
+  <div class="progress-container">
+    <img src="/Group 10.svg" alt="Interpreters Without Borders" class="icon" />
+    <p>
+      Please wait while we try to match you with a translator who can translate between
+      <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>
+      and
+      <strong>{{ requiredLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>
+    </p>
+  </div>
 }
 
 @if (rtcEstablished() == MatchingStatus.SUCCESS) {
-  <h4>You have been successfully connected with a translator.</h4>
-  <p>Audio is being transmitted between your devices...</p>
-  <a matButton="outlined" href="/">End call</a>
+  <div class="success-container">
+    <img src="/Group 16.svg" alt="Interpreters Without Borders" class="icon" />
+    <h4>You have been successfully connected with a translator.</h4>
+    <p>Audio is being transmitted between your devices...</p>
+    <a matButton="outlined" href="/">End call</a>
+  </div>
 }
 
 @if (rtcEstablished() == MatchingStatus.END) {
-  <h4>The other party has ended the call.</h4>
+  <div class="end-container">
+    <img src="/Group 16-2.svg" alt="Interpreters Without Borders" class="icon" />
+    <h4>The other party has ended the call.</h4>
+  </div>
 }

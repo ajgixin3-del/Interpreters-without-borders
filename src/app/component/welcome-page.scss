@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  color: rgba(52, 70, 90, 1);
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  line-height: 1;
+  letter-spacing: 5%;
+  font-size: xx-large;
+}
+
+.group-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+button {
+  font-size: x-large;
+}
+
+.welcome-container, .footer {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 240px;
+  height: 240px;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    line-height: 150%;
+  }
+
+  .group-button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+}

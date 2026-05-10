@@ -12,7 +12,7 @@ import { MatchingStatus } from '../business-types';
   selector: 'find-translator-page',
   imports: [RouterLink, MatButtonModule, NgOptionTemplateDirective, NgSelectComponent, FormsModule],
   templateUrl: './find-translator-page.html',
-  styleUrl: './find-translator-page.css',
+  styleUrl: './find-translator-page.scss',
 })
 export class FindTranslatorPage {
   @ViewChild('audioFromRemote') private audioPlayer!: ElementRef<HTMLAudioElement>;
