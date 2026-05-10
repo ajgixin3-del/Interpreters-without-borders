@@ -1,5 +1,4 @@
 import { Component, ElementRef, inject, Signal, ViewChild } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { NgOptionTemplateDirective, NgSelectComponent } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +9,7 @@ import { MatchingStatus } from '../business-types';
 
 @Component({
   selector: 'find-translator-page',
-  imports: [RouterLink, MatButtonModule, NgOptionTemplateDirective, NgSelectComponent, FormsModule],
+  imports: [MatButtonModule, NgOptionTemplateDirective, NgSelectComponent, FormsModule],
   templateUrl: './find-translator-page.html',
   styleUrl: './find-translator-page.scss',
 })
