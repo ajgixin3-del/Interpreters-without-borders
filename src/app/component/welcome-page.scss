@@ -1,25 +1,32 @@
-h1,
-h2 {
+h1 {
   text-align: center;
-  color: #f97171;
-  font-size: xxx-large;
-}
-
-h2 {
-  font-size: xx-large;
+  color: rgba(52, 70, 90, 1);
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  line-height: 1;
   letter-spacing: 5%;
+  font-size: xx-large;
 }
 
 .group-button-container {
   display: flex;
   justify-content: center;
   gap: 120px;
-
 }
 
 button {
-  background-color: #b2eee6;
   font-size: x-large;
+}
+
+.welcome-container, .footer {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 240px;
+  height: 240px;
 }
 
 @media (max-width: 768px) {
@@ -32,17 +39,4 @@ button {
     align-items: center;
     gap: 50px;
   }
-}
-
-.welcome-container, .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1px
-}
-
-.icon {
-  width: 240px;
-  height: 240px;
-  display: inline-block;
 }

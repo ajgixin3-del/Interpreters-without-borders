@@ -1,5 +1,8 @@
 .offer-translation-container {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
 }
 
 h1 {
@@ -7,6 +10,7 @@ h1 {
 }
 
 ng-select {
+  margin: 0 auto;
   width: 400px;
   margin-bottom: 1em;
 }
@@ -21,7 +25,9 @@ button {
 }
 
 .progress-container, .success-container, .end-container {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 1px

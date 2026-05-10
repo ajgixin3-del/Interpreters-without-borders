@@ -1,4 +1,5 @@
 <div class="offer-translation-container">
+
   <button matButton="outlined" routerLink="/">Home</button>
   <h1>Offer Translation</h1>
   <audio autoplay #audioFromRemote></audio>
@@ -23,10 +24,11 @@
       translation
     </button>
   }
+
 </div>
 
 @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
-  <div lass="progress-container">
+  <div сlass="progress-container">
     <img src="/Group 10.svg" alt="Interpreters Without Borders" class="icon" />
     <p>
       Please remain ready as you may be matched to someone who needs your help with
