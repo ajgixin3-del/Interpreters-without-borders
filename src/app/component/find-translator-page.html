@@ -38,7 +38,7 @@
 
 @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
   <div class="progress-container">
-    <img src="/Group 10.svg" alt="Interpreters Without Borders" class="icon" />
+    <img src="searching-for-match-icon.svg" alt="Interpreters Without Borders" class="icon" />
     <p>
       Please wait while we try to match you with a translator who can translate between
       <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>
@@ -50,7 +50,7 @@
 
 @if (rtcEstablished() == MatchingStatus.SUCCESS) {
   <div class="success-container">
-    <img src="/Group 16.svg" alt="Interpreters Without Borders" class="icon" />
+    <img src="audio-connection-established.svg" alt="Interpreters Without Borders" class="icon" />
     <h4>You have been successfully connected with a translator.</h4>
     <p>Audio is being transmitted between your devices...</p>
     <a matButton="outlined" href="/">End call</a>
@@ -59,7 +59,7 @@
 
 @if (rtcEstablished() == MatchingStatus.END) {
   <div class="end-container">
-    <img src="/Group 16-2.svg" alt="Interpreters Without Borders" class="icon" />
+    <img src="audio-connection-closed.svg" alt="Interpreters Without Borders" class="icon" />
     <h4>The other party has ended the call.</h4>
   </div>
 }
