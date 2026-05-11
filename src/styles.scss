@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 body {
   background: #E4F4F7;
   background: linear-gradient(180deg, rgba(246, 248, 250, 0.4) 0%, rgba(228, 244, 247, 1) 100%);
@@ -12,7 +14,17 @@ body {
 }
 
 :root {
-  --mat-button-outlined-label-text-color: #f99192;
+  @include mat.button-overrides((
+    filled-label-text-color: white,
+    filled-container-color: #FE7959,
+    outlined-label-text-color: #FE7959,
+    outlined-outline-color: #FE7959,
+    text-label-text-color: #FE7959,
+  ));
 }
 
-/* You can add global styles to this file, and also import other style files */
+:root {
+  @include mat.dialog-overrides((
+    subhead-color: #2DBFAD,
+  ));
+}
