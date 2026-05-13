@@ -25,30 +25,30 @@
     </button>
   }
 
+  @if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
+    <div class="progress-container">
+      <img src="searching-for-match-icon.svg" alt="Interpreters Without Borders" class="icon" />
+      <p>
+        Please remain ready as you may be matched to someone who needs your help with
+        <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>.
+      </p>
+    </div>
+  }
+
+  @if (rtcEstablished() == MatchingStatus.SUCCESS) {
+    <div class="success-container">
+      <img src="audio-connection-established.svg" alt="Interpreters Without Borders" class="icon" />
+      <h4>You have been successfully connected to help another person.</h4>
+      <p>Audio is being transmitted between your devices...</p>
+      <a matButton="outlined" href="">End call</a>
+    </div>
+  }
+
+  @if (rtcEstablished() == MatchingStatus.END) {
+    <div class="end-container">
+      <img src="audio-connection-closed.svg" alt="Interpreters Without Borders" class="icon" />
+      <h4>The other party has ended the call.</h4>
+    </div>
+  }
+
 </div>
-
-@if (rtcEstablished() == MatchingStatus.IN_PROGRESS) {
-  <div class="progress-container">
-    <img src="searching-for-match-icon.svg" alt="Interpreters Without Borders" class="icon" />
-    <p>
-      Please remain ready as you may be matched to someone who needs your help with
-      <strong>{{ knownLanguages.map(l => languages.find(wl => wl.code == l)?.name).join(', ') }}</strong>.
-    </p>
-  </div>
-}
-
-@if (rtcEstablished() == MatchingStatus.SUCCESS) {
-  <div class="success-container">
-    <img src="audio-connection-established.svg" alt="Interpreters Without Borders" class="icon" />
-    <h4>You have been successfully connected to help another person.</h4>
-    <p>Audio is being transmitted between your devices...</p>
-    <a matButton="outlined" href="">End call</a>
-  </div>
-}
-
-@if (rtcEstablished() == MatchingStatus.END) {
-  <div class="end-container">
-    <img src="audio-connection-closed.svg" alt="Interpreters Without Borders" class="icon" />
-    <h4>The other party has ended the call.</h4>
-  </div>
-}
